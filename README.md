@@ -1,6 +1,11 @@
 meteor-route-parser
 =====
 
+[![testing](https://travis-ci.org/evaisse/meteor-route-parser.svg?branch=master)](https://travis-ci.org/evaisse/meteor-route-parser)
+
+    meteor add evaisse:route-parser
+
+
 Small & consise route parser, inspired by Sinatra, Iron.Router & others.
 
 **Do not provide routing by itself**, this lib only transform pattern to regexp/params-mapper handler.
