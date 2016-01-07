@@ -1,10 +1,10 @@
 Package.describe({
-    name: 'meteor-route-parser',
+    name: 'evaisse:route-parser',
     version: '0.0.1',
     // Brief, one-line summary of the package.
-    summary: 'A vanilla route parser that implements all features of ruby sinatra routing',
+    summary: 'A vanilla route parser that implements all common features of pattern routing',
     // URL to the Git repository containing the source code for this package.
-    git: '',
+    git: 'https://github.com/evaisse/meteor-route-parser.git',
     // By default, Meteor will default to using README.md for documentation.
     // To avoid submitting documentation, set this field to null.
     documentation: 'README.md'
