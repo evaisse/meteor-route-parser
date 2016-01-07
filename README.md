@@ -1,41 +1,47 @@
 meteor-route-parser
 =====
 
-Small & consise route parser, inspired by Sinatra, Iron.Router &amp; others.
-Do not provide routing by itself, only route pattern transformation to regexp handler.
+Small & consise route parser, inspired by Sinatra, Iron.Router & others.
 
+**Do not provide routing by itself**, this lib only transform pattern to regexp/params-mapper handler.
+
+*Note that the parser by itself has no dependencies from NodeJS nor Meteor. You can freely use it in vanilla Javascript.*
 
 Simple usage
 
+
+    RouteParser.parse("/post/:id").exec(url);
     /*
         Will match : /post/mypost-123 => { id: "mypost-123" }
      */
-    RouteParser.parse("/post/:id").exec(document.location);
 
+Optionnal groups
 
-Options
-
+    RouteParser.parse("/post(/:id)").exec(url);
     /*
         Will match :
             /post/mypost-123 => { id: "mypost-123" }
             /post => { id: null }
             /post/ => { id: null }
      */
-    RouteParser.parse("/post/?:id?").exec(document.location);
 
+Works also in url subfragment level
 
-Work on subfragment levels
-
+    RouteParser.parse("/post/:id-*", {id: /\d+/}).exec(url);
     /*
         Will match :
             /post/123-match => { id: "123", 0: "match" }
     */
-    RouteParser.parse("/post/:id-*").constrain('id', /\d+/).exec(document.location);
 
+You can always use traditionnal RegExp
 
-A more complex example :
+    RouteParser.parse(/^\/foo\/(\d+\/?)?$/).exec(url);
+
+A more complex example
 
     var route = RouteParser.parse("/another/:foo/(bla/:bar(/*)?)?");
+
+    params = route.exec(url);
 
     /*
         Will match :
@@ -43,4 +49,3 @@ A more complex example :
             /another/123/bla/456 => { foo: "123", bar: "456" }
             /another/123/bla/456/other/splat/anything => { foo: "123", bar: "456", 0: "other/splat/anything" }
      */
-    params = route.exec(document.location);
