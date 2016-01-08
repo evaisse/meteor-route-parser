@@ -20,6 +20,6 @@ Package.onUse(function(api) {
 Package.onTest(function(api) {
     api.use('ecmascript');
     api.use('tinytest');
-    api.use('route-parser');
+    api.use('evaisse:route-parser');
     api.addFiles('meteor-route-parser-tests.js');
 });
