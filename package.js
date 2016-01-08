@@ -21,5 +21,5 @@ Package.onTest(function(api) {
     api.use('ecmascript');
     api.use('tinytest');
     api.use('evaisse:route-parser');
-    api.addFiles('meteor-route-parser-tests.js');
+    api.addFiles('route-parser-tests.js');
 });
