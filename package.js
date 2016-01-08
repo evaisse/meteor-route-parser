@@ -14,12 +14,12 @@ Package.onUse(function(api) {
     api.versionsFrom('1.2.1');
     api.use('ecmascript');
     api.export('RouteParser');
-    api.addFiles('meteor-route-parser.js');
+    api.addFiles('route-parser.js');
 });
 
 Package.onTest(function(api) {
     api.use('ecmascript');
     api.use('tinytest');
-    api.use('meteor-route-parser');
+    api.use('route-parser');
     api.addFiles('meteor-route-parser-tests.js');
 });
