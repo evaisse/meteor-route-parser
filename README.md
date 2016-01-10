@@ -1,24 +1,28 @@
-meteor-route-parser
-=====
+# RouteParser
+
+Small & consise route parser, inspired by Sinatra, Iron.Router & others. **Do not provide routing by itself**, this lib only transform pattern to regexp/params-mapper handler. *Note that the parser by itself has no dependencies from NodeJS nor Meteor. You can freely use it in vanilla Javascript.*
+
 
 [![testing](https://travis-ci.org/evaisse/meteor-route-parser.svg?branch=master)](https://travis-ci.org/evaisse/meteor-route-parser)
+
+
+## Install
+
+
 
     meteor add evaisse:route-parser
 
 
-Small & consise route parser, inspired by Sinatra, Iron.Router & others.
-
-**Do not provide routing by itself**, this lib only transform pattern to regexp/params-mapper handler.
-
-*Note that the parser by itself has no dependencies from NodeJS nor Meteor. You can freely use it in vanilla Javascript.*
-
-Simple usage
+## Simple usage
 
 
     RouteParser.parse("/post/:id").exec(url);
     /*
         Will match : /post/mypost-123 => { id: "mypost-123" }
      */
+
+
+## Complete usage
 
 Optionnal groups
 
